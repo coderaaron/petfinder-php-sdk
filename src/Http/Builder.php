@@ -8,10 +8,9 @@ use Http\Client\Common\Plugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\HttpAsyncClient;
 use Http\Discovery\HttpAsyncClientDiscovery;
-use Http\Discovery\MessageFactoryDiscovery;
+use GuzzleHttp\Psr7\HttpFactory;
 use Http\Discovery\Psr17Factory;
 use Http\Discovery\Psr17FactoryDiscovery;
-use Http\Message\RequestFactory;
 
 class Builder
 {
@@ -21,7 +20,7 @@ class Builder
     private $http;
 
     /**
-     * @var RequestFactory
+     * @var HttpFactory
      */
     private $requestFactory;
 
@@ -58,7 +57,7 @@ class Builder
         return $this->client = new PluginClient($this->http, $this->plugins);
     }
 
-    public function getRequestFactory(): Psr17Factory
+    public function getRequestFactory(): HttpFactory
     {
         return $this->requestFactory;
     }
