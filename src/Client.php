@@ -60,7 +60,7 @@ class Client
         $this->secret = $secret;
         $this->httpClientBuilder = $builder ?? new Builder();
 
-		$uri = Psr17FactoryDiscovery::findUriFactory()->createUri($baseUrl);
+        $uri = Psr17FactoryDiscovery::findUriFactory()->createUri($baseUrl);
         //$uri = UriFactoryDiscovery::find()->createUri($baseUrl);
 
         $this->httpClientBuilder->addPlugin(new ProblemDetailsPlugin());
