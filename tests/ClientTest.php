@@ -137,7 +137,7 @@ class ClientTest extends TestCase
         $this->assertInstanceOf($expected, $api);
     }
 
-    public function dataApi(): \Generator
+    public static function dataApi(): \Generator
     {
         yield [Animal::class, Animal::class];
         yield ['animal', Animal::class];
@@ -160,7 +160,7 @@ class ClientTest extends TestCase
         $this->client->api($name);
     }
 
-    public function dataApiInvalid(): \Generator
+    public static function dataApiInvalid(): \Generator
     {
         yield [Client::class];
         yield ['dog'];

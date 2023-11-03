@@ -12,11 +12,13 @@
         "php-http/discovery": "*",
         "php-http/httplug": "*",
         "php-http/message-factory": "*",
-        "psr/http-message": "*"
+        "psr/http-factory": "*",
+		"psr/http-message": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "*",
         "guzzlehttp/psr7": "*",
+        "http-interop/http-factory-guzzle": "^1.2",
         "php-coveralls/php-coveralls": "*",
         "php-http/guzzle6-adapter": "*",
         "php-http/mock-client": "*",
@@ -39,6 +41,9 @@
         "cs": "php-cs-fixer fix -v"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }
